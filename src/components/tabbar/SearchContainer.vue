@@ -1,15 +1,13 @@
 <template>
-    <div>
-        <h3>SearchContainer</h3>
-    </div>
+  <div>
+    <mt-search v-model="value"></mt-search>
+  </div>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 <style lang="scss" scoped>
-    
+
 </style>

@@ -21,16 +21,18 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 // 设置请求的根路径
 Vue.http.options.root = 'http://www.liulongbin.top:3005';
+Vue.http.options.emulateJSON = true;
 
 // 导入 MUI 的样式
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
 
 // 按需导入Mint-UI中的组件
-import {Header,Swipe, SwipeItem} from 'mint-ui'
+import {Header,Swipe, SwipeItem,Button} from 'mint-ui'
 Vue.component(Header.name,Header)
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Button.name, Button);
 
 // 导入App根组件
 import app from './App.vue'

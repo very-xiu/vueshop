@@ -7,14 +7,15 @@
         </p>
         <hr>
         <!-- 内容区域 -->
-        <div class="content" v-html="newsinfo.content">
-
-        </div>
+        <div class="content" v-html="newsinfo.content"></div>
+        <comment-box :id="this.id"></comment-box>
     </div>
 </template>
 
 <script>
 import {Toast} from 'mint-ui'
+// 导入评论子组件
+import comment from '../subcomponents/comment.vue'
 
 export default{
     data(){
@@ -30,12 +31,16 @@ export default{
         getNewsInfo(){ //获取新闻详情
             this.$http.get('api/getnew/'+this.id).then(result=>{
                 if(result.body.status === 0){
+                    // console.log(this.newsinfo+'22222');
                     this.newsinfo = result.body.message[0];
                 }else{
                     Toast('获取新闻内容失败')
                 }
             })
         }
+    },
+    components:{
+        'comment-box':comment
     }
 }
 </script>

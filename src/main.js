@@ -1,5 +1,7 @@
 // 项目入口文件
 import Vue from 'vue'
+import Vuex from 'vuex'
+Vue.use(Vuex)
 
 // 1.1 导入路由的包
 import VueRouter from "vue-router"
@@ -45,8 +47,19 @@ Vue.use(VuePreview)
 // 导入App根组件
 import app from './App.vue'
 
+var store = new Vuex.Store({
+    state:{
+
+    },
+    mutations:{
+
+    }
+})
+
 var vm = new Vue({
     el:'#app',
     render:c=>c(app),
-    router // 1.4 挂载路由对象到vm实例上
+    router, // 1.4 挂载路由对象到vm实例上
+    store
 })
+

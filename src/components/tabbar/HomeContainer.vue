@@ -1,6 +1,9 @@
 <template>
   <div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 68b7e90327b2c553f488466bc349a4d8684a0591
     <swiper :lunbotuList='lunbotuList' :isfull="true"></swiper>
 
     <!-- 九宫格 到 6宫格 的改造工程 -->
@@ -47,7 +50,11 @@
 
 <script>
 import { Toast } from "mint-ui";
+<<<<<<< HEAD
 import swiper from '../comment/swiper.vue'
+=======
+import swiper from '../subcomponents/swiper.vue'
+>>>>>>> 68b7e90327b2c553f488466bc349a4d8684a0591
 
 export default {
   data() {
@@ -61,9 +68,13 @@ export default {
   methods: {
     getLunbotu() {
       //获取轮播图数据的方法
+<<<<<<< HEAD
       this.$http
         .get("api/getlunbo")
         .then(result => {
+=======
+      this.$http.get("api/getlunbo").then(result => {
+>>>>>>> 68b7e90327b2c553f488466bc349a4d8684a0591
           // console.log(result.body);
           if (result.body.status === 0) {
             // 成功了
@@ -88,15 +99,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.mint-swipe {
-  height: 200px;
-  .mint-swipe-item {
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
 
 .mui-grid-view.mui-grid-9{
     background-color: #fff;

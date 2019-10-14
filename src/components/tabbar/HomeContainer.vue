@@ -1,9 +1,5 @@
 <template>
   <div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 68b7e90327b2c553f488466bc349a4d8684a0591
     <swiper :lunbotuList='lunbotuList' :isfull="true"></swiper>
 
     <!-- 九宫格 到 6宫格 的改造工程 -->
@@ -39,7 +35,7 @@
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+        <a href="#" @click.prevent="goContact">
           <img src="../../images/menu6.png">
           <div class="mui-media-body">联系我们</div>
         </a>
@@ -50,11 +46,7 @@
 
 <script>
 import { Toast } from "mint-ui";
-<<<<<<< HEAD
 import swiper from '../comment/swiper.vue'
-=======
-import swiper from '../subcomponents/swiper.vue'
->>>>>>> 68b7e90327b2c553f488466bc349a4d8684a0591
 
 export default {
   data() {
@@ -68,13 +60,9 @@ export default {
   methods: {
     getLunbotu() {
       //获取轮播图数据的方法
-<<<<<<< HEAD
       this.$http
         .get("api/getlunbo")
         .then(result => {
-=======
-      this.$http.get("api/getlunbo").then(result => {
->>>>>>> 68b7e90327b2c553f488466bc349a4d8684a0591
           // console.log(result.body);
           if (result.body.status === 0) {
             // 成功了
@@ -90,6 +78,9 @@ export default {
     },
     goVideo(){
       this.$router.push({name:'video'})
+    },
+    goContact(){
+      this.$router.push({name:'contact'})
     }
   },
   components:{

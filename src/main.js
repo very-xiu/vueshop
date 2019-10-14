@@ -3,9 +3,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
-import Vuex from 'vuex'
-Vue.use(Vuex)
-
 import VuePreview from 'vue-preview'
 Vue.use(VuePreview)
 

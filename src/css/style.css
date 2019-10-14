@@ -1,0 +1,94 @@
+/* 配色方案 */
+/* 主色调:#0172b0 */
+/* 次色调:#88daf7 */
+/* 阴影色:#01517d */
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    min-height: 100vh;
+    /* background: url("../images/bg.jpg") no-repeat center/cover */
+}
+
+.container{
+    /* 使container居中 */
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    width:350px;
+    height: 240px;
+}
+
+
+.container .front,
+.container .back{
+    /* 使front和back重叠 */
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(25deg,#0172b0,#88daf7);
+    box-shadow: 6px 6px 14px #01517d,inset 0 0 15px #88daf7;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: .5s cubic-bezier(0.48,-0.56, 0.51, 1.67);
+}
+
+.container .front{
+    /* 让front显示在前 */
+    z-index: 1;
+}
+
+.turn{
+    margin: 10px;
+    text-align: right;
+}
+
+.turn i{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+h2,h4{
+    margin: 10px 0;
+    color:white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.links{
+    margin: 35px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a{
+    text-decoration: none;
+}
+
+.links i{
+    color:white;
+    font-size: 1.5rem;
+}
+
+.container .back{
+    transform: rotateY(180deg);
+}
+
+.back.back-turn{
+    transform: rotateY(0deg);
+}
+
+.front.front-turn{
+    z-index: 0;
+    transform: rotateY(-180deg);
+}

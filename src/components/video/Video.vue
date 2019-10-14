@@ -2,20 +2,11 @@
   <div>
     <!-- 顶部滑动条区域 -->
     <div id="slider" class="mui-slider">
-      <div
-        class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted"
-      >
+      <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
         <div class="mui-scroll">
-          <a class="mui-control-item mui-active">电影区</a>
-          <a class="mui-control-item">电视区</a>
-          <a class="mui-control-item">动漫区</a>
-          <a class="mui-control-item">搞笑视频区</a>
-          <a class="mui-control-item">LOL区</a>
-          <a class="mui-control-item">舞蹈区</a>
-          <a class="mui-control-item">美食区</a>
-          <a class="mui-control-item">音乐区</a>
-          <a class="mui-control-item">户外区</a>
-          <a class="mui-control-item">美女区</a>
+
+          <a :class="['mui-control-item',item.id==0?'mui-active':'']" v-for="item in videolist" :key="item.id" @click.prevent="goVideoText(item.id)">{{item.name}}</a>
+
         </div>
       </div>
     </div>
@@ -23,28 +14,22 @@
     <!-- 视频列表区域 -->
     <ul class="video-list">
       <li>
-        <video-player
+        <h3 v-for="item in cates1" :key="item.num" v-html="item.text"></h3>
+        <!-- <video-player
           class="video-player vjs-custom-skin"
           ref="videoPlayer"
           :playsinline="true"
           :options="playerOptions"
-        ></video-player>
-      </li>
-      <li>
-        <video-player
-          class="video-player vjs-custom-skin"
-          ref="videoPlayer"
-          :playsinline="true"
-          :options="playerOptions"
-        ></video-player>
+        ></video-player>-->
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import mui from "../../lib/mui/js/mui.js";
+
 export default {
-  name: 'BusImg',
   data() {
     return {
       playerOptions: {
@@ -58,8 +43,8 @@ export default {
         fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
         sources: [
           {
-            type: "video/mp4",  //这里的种类支持很多种：基本视频格式、直播、流媒体等，具体可以参看git网址项目
-            src: "../../videoMP4/BaoMan-24.mp4" //url地址
+            type: "video/mp4", //这里的种类支持很多种：基本视频格式、直播、流媒体等，具体可以参看git网址项目
+            src: "http://www.w3school.com.cn/example/html5/mov_bbb.mp4" //url地址
           }
         ],
         poster: "", //你的封面地址
@@ -71,10 +56,48 @@ export default {
           remainingTimeDisplay: false,
           fullscreenToggle: true //全屏按钮
         }
-      }
+      },
+      videolist: [
+        { id: 0, name: "全部" },
+        { id: 1, name: "电影区" },
+        { id: 2, name: "动漫区" },
+        { id: 3, name: "电视区" },
+        { id: 4, name: "LOL区" },
+        { id: 5, name: "美食区" },
+        { id: 6, name: "音乐区" },
+        { id: 7, name: "户外区" },
+        { id: 8, name: "搞笑视频区" }
+      ],
+      cates: [
+        {num:0,text:
+          "<p>这是电影区，自己的假数据</p><p>这是动漫区，自己的假数据</p><p>这是电视区，自己的假数据</p><p>这是LOL区，自己的假数据</p><p>这是美食区，自己的假数据</p><p>这是音乐区，自己的假数据</p><p>这是户外区，自己的假数据</p><p>这是搞笑视频区，自己的假数据</p>"
+        },
+        {num:1,text:'这是电影区，自己的假数据'},
+        {num:2,text:'这是动漫区，自己的假数据'},
+        {num:3,text:'这是电视区，自己的假数据'},
+        {num:4,text:'这是LOL区，自己的假数据'},
+        {num:5,text:'这是美食区，自己的假数据'},
+        {num:6,text:'这是音乐区，自己的假数据'},
+        {num:7,text:'这是户外区，自己的假数据'},
+        {num:8,text:'这是搞笑视频区，自己的假数据'}
+      ],
+      cates1:[]
     };
-  }
-};
+  },
+  mounted() {
+    mui(".mui-scroll-wrapper").scroll({
+      deceleration: 0.0005
+    });
+  },
+  created() {
+    this.goVideoText(0);
+  },
+  methods: {
+    goVideoText(id){
+      this.cates1 = this.cates.slice(id,id+1);
+    }
+  } 
+}
 </script>
 
 <style lang="scss" scoped>
@@ -85,8 +108,12 @@ export default {
 .video-list {
   list-style: none;
   padding: 0 5px;
-  li{
+  li {
     margin-bottom: 5px;
+  }
+  p{
+    color: red;
+    font-weight: bold;
   }
 }
 </style>

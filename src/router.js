@@ -17,6 +17,7 @@ import FeedBack from './components/message feedback/FeedBack.vue'
 import Video from './components/video/Video.vue'
 import ForgetPassword from './components/login/ForgetPassword.vue'
 import Contact from './components/contanct/Contact.vue'
+import Reg from './components/login/Reg.vue'
 
 // 创建路由对象
 var router = new VueRouter({
@@ -37,7 +38,8 @@ var router = new VueRouter({
         {path:'/home/feedback',component:FeedBack,name:'feedback'},
         {path:'/home/video',component:Video,name:'video'},
         {path:'/home/forgetpassword',component:ForgetPassword,name:'forgetpassword'},
-        {path:'/home/contact',component:Contact,name:'contact'}
+        {path:'/home/contact',component:Contact,name:'contact'},
+        {path:'/home/reg',component:Reg,name:'reg'}
     ],
     linkActiveClass:' mui-active', // 覆盖默认的路由高亮的类，默认的类叫做 router-link-active
     scrollBehavior(to, from,savedPosition) {

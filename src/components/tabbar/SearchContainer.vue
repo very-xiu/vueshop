@@ -1,8 +1,6 @@
 <template>
   <div>
-    <mt-search>
-      <mt-cell v-for="item in result" :key="item.title" :title="item.title"></mt-cell>
-    </mt-search>
+    <mt-search cancel-text="取消" placeholder="搜索" :result.sync="result" :autofocus='true'></mt-search>
   </div>
 </template>
 
@@ -10,16 +8,23 @@
 export default {
   data(){
     return {
-      result:[
-        {title:'天气'},
-        {title:'网络'},
-        {title:'狗屎'}
-      ]
+      result:['看看','一起看','走着看','看地下','看天上']
     }
   }
 };
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+input[type=search]{
+  padding: 0;
+  margin: 0;
+  height: 26px;
+  background-color: white;
+}
+.mint-cell:hover {
+  background-color: #eee;
+}
+.mint-search-list{
+  padding-top: 100px;
+}
 </style>

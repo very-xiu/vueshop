@@ -33,8 +33,8 @@
 </template>
 
 <script>
-import "../../lib/mui/css/feedback.css";
-import mui from "../../lib/mui/js/mui.js";
+
+import mui from "../../lib/mui/js/mui.min.js";
 import { Toast } from "mint-ui";
 
 export default {
@@ -87,6 +87,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../lib/mui/css/feedback.css";
+@import '../../lib/bootstrap-3.3.7-dist/css/bootstrap--.css';
+@import '../../css/toast.css';
+
 .mui-content {
   overflow: hidden;
   padding: 5px;

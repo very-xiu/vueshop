@@ -33,14 +33,6 @@ Vue.http.options.emulateJSON = true;
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
 
-import './lib/bootstrap-3.3.7-dist/css/bootstrap--.css'
-import './css/toast.css'
-
-import VideoPlayer from 'vue-video-player'
-require('../node_modules/video.js/dist/video-js.css')
-require('../node_modules/vue-video-player/src/custom-theme.css')
-Vue.use(VideoPlayer)
-
 // 按需导入Mint-UI中的组件
 /* import {Header,Swipe, SwipeItem,Button,Search} from 'mint-ui'
 Vue.component(Header.name,Header)
@@ -85,7 +77,7 @@ var store = new Vuex.Store({
             state.car.some((item,i)=>{
                 if(item.id == id){
                     state.car.splice(i,1);
-                    return true;
+                    return true; 
                 }
             })
             localStorage.setItem('car',JSON.stringify(state.car));

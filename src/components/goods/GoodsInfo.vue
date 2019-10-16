@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     getLunbotu() {
-      console.log(this.id);
+      // console.log(this.id);
       this.$http.get("api/getthumimages/" + this.id).then(result => {
         if (result.body.status === 0) {
           result.body.message.forEach(item => {

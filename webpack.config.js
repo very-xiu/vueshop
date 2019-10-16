@@ -40,7 +40,7 @@ module.exports={
     },
     resolve:{
         alias:{
-            // "vue$":"vue/dist/vue.js"
+            // "vue$":"vue/dist/vue.js" //取一个变量别名来代表路径，用别名代表长路径，方便缩写
         }
     }
 }

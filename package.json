@@ -39,10 +39,13 @@
     "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "mint-ui": "^2.2.13",
     "moment": "^2.24.0",
+    "qs": "^6.9.0",
     "vue": "^2.6.10",
+    "vue-axios": "^2.1.5",
     "vue-preview": "^1.0.5",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.1.3",

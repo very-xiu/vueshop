@@ -24,3 +24,27 @@ ajax前景非常乐观，可以提高系统性能，优化用户界面。AJAX现
 3、对搜索引擎的支持比较弱。  
 4、破坏了程序的异常机制。  
 5、不容易调试。  
+
+## Axios  
+axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征：  
+从浏览器中创建 XMLHttpRequest  
+从 node.js 发出 http 请求  
+支持 Promise API  
+拦截请求和响应  
+转换请求和响应数据  
+取消请求  
+自动转换JSON数据  
+客户端支持防止 CSRF/XSRF  
+
+## 引入方式：  
+1.$ npm install axios  
+2.$ cnpm install axios //taobao源  
+3.$ bower install axios  
+4.或者使用cdn：<script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
+
+## 具体例子  
+1.https://blog.csdn.net/qq_41033290/article/details/82844716  
+2.https://blog.csdn.net/hsany330/article/details/71079745  
+2.http://axios-js.com/zh-cn/docs/ 官方文档  
+
+

@@ -38,7 +38,10 @@ axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它�
 
 ## 引入方式：  
 1.$ npm install axios  
-2.$ cnpm install axios //taobao源  
+
+ 
+2.$ cnpm install axios //taobao源   
+
 3.$ bower install axios  
 4.或者使用cdn：<script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
 

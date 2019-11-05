@@ -34,6 +34,9 @@ Vue.http.options.emulateJSON = true;
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
 
+// 导入字体样式
+import 'font-awesome/scss/font-awesome.scss'
+
 // 按需导入Mint-UI中的组件
 /* import {Header,Swipe, SwipeItem,Button,Search} from 'mint-ui'
 Vue.component(Header.name,Header)

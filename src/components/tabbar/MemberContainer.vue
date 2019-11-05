@@ -1,153 +1,25 @@
 <template>
-  <div>
-    <header class="mui-bar-nav">
-			<h1 class="mui-title">登录</h1>
-		</header>
-    <div class="mui-content">
-      <form id="login-form" class="mui-input-group">
-        <div class="mui-input-row">
-          <label>账号</label>
-          <input id="account" type="text" class="mui-input-clear mui-input" placeholder="请输入账号" v-model="loginmsg"/>
-        </div>
-        <div class="mui-input-row">
-          <label>密码</label>
-          <input id="password" type="password" class="mui-input-clear mui-input" placeholder="请输入密码" v-model="passwordmsg" />
-        </div>
-      </form>
-      <form class="mui-input-group">
-        <ul class="mui-table-view mui-table-view-chevron">
-          <li class="mui-table-view-cell">
-            自动登录
-            <div id="autoLogin" class="mui-switch">
-              <div class="mui-switch-handle"></div>
-            </div>
-          </li>
-        </ul>
-      </form>
-      <div class="mui-content-padded">
-        <button id="login" class="mui-btn mui-btn-block mui-btn-primary" @click="goLoginMain">登录</button>
-        <div class="link-area">
-          <a id="reg" @click.prevent="goReg">注册账号</a>
-          <span class="spliter">|</span>
-          <a id="forgetPassword" @click.prevent="ForgetPassword">忘记密码</a>
-        </div>
-      </div>
-      <div class="mui-content-padded oauth-area"></div>
-    </div>
+	<div>
+      <login />
   </div>
 </template>
 
 <script>
+import Login from './Login.vue'
 
 export default {
   data(){
 	  return {
-		loginmsg:'',
-		passwordmsg:''
+
 	  }
   },
-  methods: {
-   ForgetPassword(){
-     this.$router.push({name:'forgetpassword'})
-   },
-   goReg(){
-     this.$router.push({name:'reg'})
-   },
-   goLoginMain() {
-	   if(this.loginmsg.trim().length<=0||this.passwordmsg.trim().length<=0){
-		   alert('账户名或密码不能为空')
-	   }else{
-		   this.$router.push({name:'loginmain'})
-	   }
-   }
-  }
+  components:{
+        Login
+    }
 };
 
 </script>
 
-<style lang="scss" scoped>
-@import '../../lib/mui/css/style.css';
+<style>
 
-.mui-bar-nav{
-  height: 50px;
-  background-color: #eee;
-  border:1px solid rgb(199, 199, 199);
-}
-.mui-title{
-  font-size: 20px;
-  font-weight: bold;
-}
-.mui-content{
-  padding: 0;
-}
-.area {
-				margin: 20px auto 0px auto;
-			}
-			
-			
-			
-			.mui-input-group label {
-				width: 22%;
-			}
-			
-			.mui-input-row label~input,
-			.mui-input-row label~select,
-			.mui-input-row label~textarea {
-				width: 78%;
-			}
-			
-			.mui-checkbox input[type=checkbox],
-			.mui-radio input[type=radio] {
-				top: 6px;
-			}
-			
-			.mui-content-padded {
-				margin-top: 25px;
-			}
-			
-			.mui-btn {
-				padding: 10px;
-			}
-			
-			.link-area {
-				display: block;
-				margin-top: 25px;
-				text-align: center;
-			}
-			
-			.spliter {
-				color: #bbb;
-				padding: 0px 8px;
-			}
-			
-			.oauth-area {
-				position: absolute;
-				bottom: 20px;
-				left: 0px;
-				text-align: center;
-				width: 100%;
-				padding: 0px;
-				margin: 0px;
-			}
-			
-			.oauth-area .oauth-btn {
-				display: inline-block;
-				width: 50px;
-				height: 50px;
-				background-size: 30px 30px;
-				background-position: center center;
-				background-repeat: no-repeat;
-				margin: 0px 20px;
-				/*-webkit-filter: grayscale(100%); */
-				border: solid 1px #ddd;
-				border-radius: 25px;
-			}
-			
-			.oauth-area .oauth-btn:active {
-				border: solid 1px #aaa;
-			}
-			
-			.oauth-area .oauth-btn.disabled {
-				background-color: #ddd;
-			}
 </style>

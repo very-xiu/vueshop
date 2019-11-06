@@ -8,9 +8,17 @@
       </div>
     </div>
     <div class="tupian">
-      <div class="qqtupian1" v-for="item in tupian" :key="item.id">
-        <p>{{item.name}}</p>
-        <a href="#"><img :src="item.src" alt=""></a>
+      <div class="qqtupian1">
+        <p>QQ联系</p>
+        <a href="#"><img src="../../images/qq.png"></a>
+      </div>
+      <div class="qqtupian1">
+        <p>微信联系</p>
+        <a href="#"><img src="../../images/weixin.png"></a>
+      </div>
+      <div class="qqtupian1">
+        <p>QQ邮箱联系</p>
+        <a href="#"><img src="../../images/qqemail.png"></a>
       </div>
     </div>
 
@@ -23,11 +31,11 @@
 export default {
     data(){
         return {
-          tupian:[
-            {name:'QQ联系',id:0,src:'../../images/QQ.png'},
-            {name:'微信联系',id:1,src:'../../images/微信.png'},
-            {name:'QQ邮箱联系',id:2,src:'../../images/QQ邮箱.png'}
-          ]
+          // tupian:[
+          //   {name:'QQ联系',id:0,src:'../../images/qq.png'},
+          //   {name:'微信联系',id:1,src:'../../images/weixin.png'},
+          //   {name:'QQ邮箱联系',id:2,src:'../../images/qqemail.png'}
+          // ]
         }
     },
   methods: {

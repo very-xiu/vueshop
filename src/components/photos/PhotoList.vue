@@ -27,6 +27,8 @@
 <script>
 import mui from "../../lib/mui/js/mui.min.js";
 import { Toast } from "mint-ui";
+import imagesData from '../../data/images.json';
+import imgcategoryData from '../../data/imgcategory.json';
 
 export default {
   data() {
@@ -46,14 +48,15 @@ export default {
   },
   methods:{
     getAllCategory(){
-      this.$http.get('api/getimgcategory').then(result=>{
-        if(result.body.status === 0){
-            result.body.message.unshift({title:'全部',id:0})
-            this.cates = result.body.message
-        }else{
-          Toast('分类列表刚开始不能滑动')
-        }
-      })
+      // this.$http.get('api/getimgcategory').then(result=>{
+      //   if(result.body.status === 0){
+      //       result.body.message.unshift({title:'全部',id:0})
+      //       this.cates = result.body.message
+      //   }else{
+      //     Toast('分类列表刚开始不能滑动')
+      //   }
+      // })
+      this.cates = imgcategoryData.message;//假数据
     },
     getPhotoListByCateId(cateId){
       this.$http.get('api/getimages/'+ cateId).then(result=>{

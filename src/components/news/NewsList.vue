@@ -18,7 +18,9 @@
 </template>
 
 <script>
-import {Toast} from 'mint-ui'
+import {Toast} from 'mint-ui';
+import newslistData from '../../data/newslist.json'
+
 export default {
   data() {
     return {
@@ -30,13 +32,14 @@ export default {
   },
   methods: {
     getNewsList() {
-      this.$http.get("api/getnewslist").then(result => {
+      /* this.$http.get("api/getnewslist").then(result => {
         if (result.body.status === 0) {
           this.newslist = result.body.message;
         } else {
           Toast("新闻详情页面加载失败");
         }
-      });
+      }); */
+      this.newslist = newslistData.message; //假数据
     }
   }
 };

@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import goodslistData from '../../data/goodslist.json'
+
 export default {
     data(){
         return {
@@ -33,11 +35,12 @@ export default {
     },
     methods:{
         getGoodsList(){
-            this.$http.get('api/getgoods?pageindex='+this.pageindex).then(result=>{
-                if(result.body.status === 0){
-                    this.goodslist = this.goodslist.concat(result.body.message);
-                }
-            })
+            // this.$http.get('api/getgoods?pageindex='+this.pageindex).then(result=>{
+            //     if(result.body.status === 0){
+            //         this.goodslist = this.goodslist.concat(result.body.message);
+            //     }
+            // })
+            this.goodslist = goodslistData.message
         },
         getMore(){
             this.pageindex++;

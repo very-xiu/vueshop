@@ -46,7 +46,8 @@
 
 <script>
 import { Toast } from "mint-ui";
-import swiper from '../comment/swiper.vue'
+import swiper from '../comment/swiper.vue';
+import swiperData from '../../data/swiper.json'
 
 export default {
   data() {
@@ -60,18 +61,19 @@ export default {
   methods: {
     getLunbotu() {
       //获取轮播图数据的方法
-      this.$http
-        .get("api/getlunbo")
-        .then(result => {
-          // console.log(result.body);
-          if (result.body.status === 0) {
-            // 成功了
-            this.lunbotuList = result.body.message;
-          } else {
-            // 失败了
-            Toast("加载轮播图失败...");
-          }
-        });
+      // this.$http
+      //   .get("api/getlunbo")
+      //   .then(result => {
+      //     // console.log(result.body);
+      //     if (result.body.status === 0) {
+      //       // 成功了
+      //       this.lunbotuList = result.body.message;
+      //     } else {
+      //       // 失败了
+      //       Toast("加载轮播图失败...");
+      //     }
+      //   });
+        this.lunbotuList = swiperData.message; //假数据
     },
     goFeedBack(){
       this.$router.push({name:'feedback'})

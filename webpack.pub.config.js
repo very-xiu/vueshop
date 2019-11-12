@@ -98,7 +98,7 @@ module.exports = {
                     }
                 ]
             },//会打包到dist下的fonts文件夹下，必须使用hash
-            { test: /\.(png|gif|jpg|bmp)$/, use: [
+            { test: /\.(png|gif|jpg|bmp|ico)$/, use: [
                     {
                         loader:'url-loader',
                         options: {limit: 8192,name:'images/[name].[hash:8].[ext]'}

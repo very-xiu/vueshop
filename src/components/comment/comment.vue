@@ -15,7 +15,8 @@
             </div>
         </div>
 
-        <mt-button plain type="danger" size='large' @click="getMore">加载更多</mt-button>
+        <!-- <mt-button plain type="danger" size='large' @click="getMore">加载更多</mt-button> -->
+        <mt-button plain type="danger" size='large'>加载更多</mt-button>
     </div>
 </template>
 
@@ -31,10 +32,10 @@ export default {
         }
     },
     created(){
-        this.getComments();
+        /* this.getComments(); */
     },
     methods:{
-        getComments(){ //获取评论
+        /* getComments(){ //获取评论
             this.$http.get("api/getcomments/"+ this.id +"?pageindex="+this.pageIndex).then(result=>{
                 if(result.body.status === 0){
                     // this.comments = result.body.message;
@@ -44,22 +45,26 @@ export default {
                     Toast('评论加载失败');
                 }
             })
-        },
-        getMore(){ //加载更多
+        }, */
+        /* getMore(){ //加载更多
             this.pageIndex++;
             this.getComments();
-        },
+        }, */
         postComment(){  //发表评论
             // 校验是否为空内容
             if(this.msg.trim().length === 0){
                 return Toast('评论内容不能为空！');
             }
+            //拼接出一个评论对象
+                var cmt = {user_name:"匿名用户",add_time:Date.now(),content:this.msg}
+                this.comments.unshift(cmt);
+                this.msg = '';
 
             // 发表评论
             // 参数1： 请求的URL地址
             // 参数2： 提交给服务器的数据对象 { content: this.msg }
             // 参数3： 定义提交时候，表单中数据的格式  { emulateJSON:true }
-            this.$http.post('api/postcomment/'+ this.$route.params.id,{content:this.msg.trim()})
+            /* this.$http.post('api/postcomment/'+ this.$route.params.id,{content:this.msg.trim()})
             .then(result=>{
                 if(result.body.status === 0){
                     //拼接出一个评论对象
@@ -69,7 +74,7 @@ export default {
                 }else{
                     Toast('发表评论失败');
                 }
-            })
+            }) */
         }
     },
     props:['id']

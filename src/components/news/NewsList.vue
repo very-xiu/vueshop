@@ -19,7 +19,11 @@
 
 <script>
 import {Toast} from 'mint-ui';
+<<<<<<< HEAD
 import newslistData from '../../data/newslist.json';
+=======
+import newslistData from '../../data/newslist.json'
+>>>>>>> 42c5be18811d562560a12d4913cd9cf6405d3620
 
 export default {
   data() {

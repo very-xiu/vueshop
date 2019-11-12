@@ -61,6 +61,7 @@ export default {
   methods: {
     getLunbotu() {
       //获取轮播图数据的方法
+<<<<<<< HEAD
       /* this.$http
         .get("api/getlunbo")
         .then(result => {
@@ -73,6 +74,20 @@ export default {
             Toast("加载轮播图失败...");
           }
         }); */
+=======
+      // this.$http
+      //   .get("api/getlunbo")
+      //   .then(result => {
+      //     // console.log(result.body);
+      //     if (result.body.status === 0) {
+      //       // 成功了
+      //       this.lunbotuList = result.body.message;
+      //     } else {
+      //       // 失败了
+      //       Toast("加载轮播图失败...");
+      //     }
+      //   });
+>>>>>>> 42c5be18811d562560a12d4913cd9cf6405d3620
         this.lunbotuList = swiperData.message; //假数据
     },
     goFeedBack(){

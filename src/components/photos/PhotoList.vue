@@ -28,11 +28,14 @@
 import mui from "../../lib/mui/js/mui.min.js";
 import { Toast } from "mint-ui";
 import imagesData from '../../data/images.json';
+<<<<<<< HEAD
 import imagesData1 from '../../data/images1.json';
 import imagesData2 from '../../data/images2.json';
 import imagesData3 from '../../data/images3.json';
 import imagesData4 from '../../data/images4.json';
 import imagesData5 from '../../data/images5.json';
+=======
+>>>>>>> 42c5be18811d562560a12d4913cd9cf6405d3620
 import imgcategoryData from '../../data/imgcategory.json';
 
 export default {
@@ -53,6 +56,7 @@ export default {
   },
   methods:{
     getAllCategory(){
+<<<<<<< HEAD
       /* this.$http.get('api/getimgcategory').then(result=>{
         if(result.body.status === 0){
             result.body.message.unshift({title:'全部',id:0})
@@ -61,6 +65,16 @@ export default {
           Toast('分类列表刚开始不能滑动')
         }
       }) */
+=======
+      // this.$http.get('api/getimgcategory').then(result=>{
+      //   if(result.body.status === 0){
+      //       result.body.message.unshift({title:'全部',id:0})
+      //       this.cates = result.body.message
+      //   }else{
+      //     Toast('分类列表刚开始不能滑动')
+      //   }
+      // })
+>>>>>>> 42c5be18811d562560a12d4913cd9cf6405d3620
       this.cates = imgcategoryData.message;//假数据
     },
     getPhotoListByCateId(cateId){

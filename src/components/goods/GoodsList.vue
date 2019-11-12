@@ -21,12 +21,8 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 import goodlistData from '../../data/goodlist/goodlist.json';
 import goodlistData1 from '../../data/goodlist/goodlist1.json';
-=======
-import goodslistData from '../../data/goodslist.json'
->>>>>>> 42c5be18811d562560a12d4913cd9cf6405d3620
 
 export default {
     data(){
@@ -40,7 +36,6 @@ export default {
     },
     methods:{
         getGoodsList(){
-<<<<<<< HEAD
             /* this.$http.get('api/getgoods?pageindex='+this.pageindex).then(result=>{
                 if(result.body.status === 0){
                     this.goodslist = this.goodslist.concat(result.body.message);
@@ -51,14 +46,6 @@ export default {
             }else if(this.pageindex == 2){
                 this.goodslist = this.goodslist.concat(goodlistData1.message);
             }
-=======
-            // this.$http.get('api/getgoods?pageindex='+this.pageindex).then(result=>{
-            //     if(result.body.status === 0){
-            //         this.goodslist = this.goodslist.concat(result.body.message);
-            //     }
-            // })
-            this.goodslist = goodslistData.message
->>>>>>> 42c5be18811d562560a12d4913cd9cf6405d3620
         },
         getMore(){
             this.pageindex++;

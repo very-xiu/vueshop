@@ -13,15 +13,9 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 import comment from '../comment/comment.vue';
 import {Toast} from 'mint-ui';
 import newsinfoData from '../../data/newsinfo.json';
-=======
-import comment from '../comment/comment.vue'
-import {Toast} from 'mint-ui'
-import newsinfoData from '../../data/newsinfo.json'
->>>>>>> 42c5be18811d562560a12d4913cd9cf6405d3620
 
 export default {
     data(){
@@ -35,7 +29,6 @@ export default {
     },
     methods:{
         getNewsInfo(){
-<<<<<<< HEAD
             /* this.$http.get('api/getnew/'+this.id).then(result=>{
                 if(result.body.status === 0){
                     this.newsinfo = result.body.message[0];
@@ -43,15 +36,6 @@ export default {
                     Toast('新闻信息加载失败...')
                 }
             }); */
-=======
-            // this.$http.get('api/getnew/'+this.id).then(result=>{
-            //     if(result.body.status === 0){
-            //         this.newsinfo = result.body.message[0];
-            //     }else{
-            //         Toast('新闻信息加载失败...')
-            //     }
-            // });
->>>>>>> 42c5be18811d562560a12d4913cd9cf6405d3620
             if(this.id ==13){
                 this.newsinfo = newsinfoData.message[0]
             }else if(this.id == 14){

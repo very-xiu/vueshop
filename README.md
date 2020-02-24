@@ -1,3 +1,6 @@
+# 项目展示
+![image](https://github.com/very-xiu/vueshop/blob/master/static/images/vue_shop_zhuye.gif?raw=true) <pre>              </pre>
+
 # 这是一个Vue的项目
 
 ## [主流开源协议之间有何异同？] (https://www.zhihu.com/question/19568896)

@@ -1,5 +1,5 @@
 # 项目展示
-![image](https://github.com/very-xiu/vueshop/blob/master/static/images/vue_shop_zhuye.gif?raw=true) <pre>              </pre>
+![image](https://github.com/very-xiu/vueshop/blob/master/static/images/vue_shop_zhuye.gif?raw=true) <pre>              </pre>![image](https://github.com/very-xiu/vueshop/blob/master/static/images/vue_shop_news.gif?raw=true)
 
 # 这是一个Vue的项目
 

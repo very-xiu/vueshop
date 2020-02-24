@@ -24,7 +24,8 @@ module.exports={
         new webpack.HotModuleReplacementPlugin(),// new 一个热更新的 模块对象， 这是 启用热更新的第 3 步
         new htmlWebpackPlugins({// 创建一个 在内存中 生成 HTML  页面的插件
             template:path.join(__dirname,'./src/index.html'), // 指定 模板页面，将来会根据指定的页面路径，去生成内存中的 页面
-            filename:'index.html'// 指定生成的页面的名称
+            filename:'index.html',// 指定生成的页面的名称
+            favicon: path.resolve('./src/favicon.ico')
         })
     ],
     module:{// 这个节点，用于配置 所有 第三方模块 加载器 
@@ -32,7 +33,7 @@ module.exports={
             {test:/\.css$/,use:['style-loader','css-loader']},//  配置处理 .css 文件的第三方loader 规则
             {test:/\.less$/,use:['style-loader','css-loader','less-loader']},//配置处理 .less 文件的第三方 loader 规则
             {test:/\.scss$/,use:['style-loader','css-loader','sass-loader']},// 配置处理 .scss 文件的 第三方 loader 规则
-            {test:/\.(jpg|jpeg|gif|bmp|png)$/,use:'url-loader'},
+            {test:/\.(jpg|jpeg|gif|bmp|png|ico)$/,use:'url-loader'},
             {test: /\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader' }, // 处理 字体文件的 loader 
             {test:/\.js$/,use:'babel-loader',exclude:/node_modules/}, //配置babel来转换高级的ES语法
             {test:/\.vue$/,use:'vue-loader'} // 处理 .vue 文件的 loader
